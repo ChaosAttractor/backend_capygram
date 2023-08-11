@@ -1,5 +1,6 @@
 /postgres
 /app/dist
+/app/src/config/prisma/migrations
 /app/node_modules
 .idea
 .env
