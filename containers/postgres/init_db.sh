@@ -1,0 +1,12 @@
+set -e
+
+POSTGRES="psql --username ${POSTGRES_USER}"
+
+echo "Creating database: ${POSTGRES_DB}"
+echo "Creating database: ${POSTGRES_CAPYGRAM_DB}"
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<EOSQL
+    GRANT ALL PRIVILEGES ON DATABASE $POSTGRES_DB TO $POSTGRES_USER;
+    CREATE DATABASE ${POSTGRES_CAPYGRAM_DB} OWNER $POSTGRES_USER;
+
+EOSQL

@@ -1,0 +1,5 @@
+/postgres
+/app/dist
+/app/node_modules
+.idea
+.env
