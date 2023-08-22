@@ -13,7 +13,7 @@ export class UserService {
         data: {
           nickname: dto.nickname,
           password: dto.password,
-          email: dto.password || '',
+          email: dto.email || '',
         },
       });
     } catch (e) {
